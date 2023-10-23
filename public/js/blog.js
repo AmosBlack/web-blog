@@ -17,7 +17,7 @@ const setupBlog = (data) => {
     const titleTag = document.querySelector('title');
     const publish = document.querySelector('.published');
     const tagsContainer = document.querySelector('.tags');   
-    tagsContainer.classList.add("blog-tags-container");
+    tagsContainer.classList.add("blog-tags-container")
     let rawTags = data.tags;
     for(var i = 0; i < rawTags.length; i++){
         rawTags[i] = `<a href="/tags/${rawTags[i]}" class="blog-tag">#${rawTags[i]}</a>`
