@@ -1,5 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Bitter&family=Bree+Serif&family=Frank+Ruhl+Libre&family=Roboto+Condensed:ital,wght@1,300&family=Rubik&family=Rubik+Mono+One&family=Ubuntu&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Bitter&family=Bree+Serif&family=DM+Serif+Display&family=Frank+Ruhl+Libre&family=Roboto+Condensed:ital,wght@1,300&family=Rubik&family=Rubik+Mono+One&family=Ubuntu&display=swap');
 * {
     margin: 0;
     padding: 0;
@@ -109,6 +108,16 @@ body {
     margin: 10px 20px;
 }
 
+.blog-tag{
+    text-decoration: none;
+    color: #968f8f;
+    padding: 3px 5px;
+    border-radius: 1px;
+    font-size: 15px;
+    margin-right: 10px;
+    background-color: rgb(37, 37, 37);
+}
+
 
 .blogs-section * {
     color: white;
@@ -121,6 +130,10 @@ body {
     border-radius: 10px;
     margin-bottom: 10px;
     color: #fff;
+}
+
+.blog-title{
+    font-family: "Bree Serif";
 }
 
 .blog-image:hover {

@@ -16,7 +16,13 @@ const setupBlog = (data) => {
     const blogTitle = document.querySelector('.title');
     const titleTag = document.querySelector('title');
     const publish = document.querySelector('.published');
-    
+    const tagsContainer = document.querySelector('.tags');   
+    tagsContainer.classList.add("blog-tags-container");
+    let rawTags = data.tags;
+    for(var i = 0; i < rawTags.length; i++){
+        rawTags[i] = `<a href="/tags/${rawTags[i]}" class="blog-tag">#${rawTags[i]}</a>`
+    }
+    tagsContainer.innerHTML = rawTags.join(" ");
     banner.style.backgroundImage = `url(${data.bannerImage})`;
 
     titleTag.innerHTML += blogTitle.innerHTML = data.title;
@@ -28,61 +34,6 @@ const setupBlog = (data) => {
 }
 
 const addArticle = (ele, src) => {
-    // data = data.split("\n").filter(item => item.length);
-    // // console.log(data);
-
-    // data.forEach(item => {
-    //     // check for heading
-    //     if(item[0] == '#'){
-    //         let hCount = 0;
-    //         let i = 0;
-    //         while(item[i] == '#'){
-    //             hCount++;
-    //             i++;
-    //         }
-    //         let tag = `h${hCount}`;
-    //         ele.innerHTML += `<${tag}>${item.slice(hCount, item.length)}</${tag}>`
-    //     } 
-    //     //checking for image format
-    //     else if(item[0] == "!" && item[1] == "["){
-    //         let seperator;
-
-    //         for(let i = 0; i <= item.length; i++){
-    //             if(item[i] == "]" && item[i + 1] == "(" && item[item.length - 1] == ")"){
-    //                 seperator = i;
-    //             }
-    //         }
-
-    //         let alt = item.slice(2, seperator);
-    //         let src = item.slice(seperator + 2, item.length - 1);
-    //         ele.innerHTML += `
-    //         <img src="${src}" alt="${alt}" class="article-image">
-    //         `;
-    //     }
-
-    //     else if(item[0] == "-" && item[1] == "["){
-    //         let seperator;
-
-    //         for(let i = 0; i <= item.length; i++){
-    //             if(item[i] == "]" && item[i + 1] == "(" && item[item.length - 1] == ")"){
-    //                 seperator = i;
-    //             }
-    //         }
-
-    //         let alt = item.slice(2, seperator);
-    //         let src = item.slice(seperator + 2, item.length - 1);
-    //         ele.innerHTML += `
-    //         <a href="${src}" class="article-link">${alt}</a>
-    //         `;
-    //     }
-        
-
-    //     else{
-    //         ele.innerHTML += `<p>${item}</p>`;
-    //     }
-    // })
-    
-
     var rx_lt = /</g;
     var rx_gt = />/g;
     var rx_space = /\t|\r|\uf8ff/g;
@@ -202,7 +153,5 @@ const addArticle = (ele, src) => {
     // stash
     replace(rx_stash, function(all) { return stash[parseInt(all)] });
 
-    ele.innerHTML += src.trim()
-    console.log(ele)
-    
+    ele.innerHTML += src.trim()    
 }

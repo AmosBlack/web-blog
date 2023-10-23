@@ -1,5 +1,6 @@
 const blogTitleField = document.querySelector(".title")
 const blogSubTitleField = document.querySelector(".subtitle")
+const tagsField = document.querySelector(".tags")
 const articleField = document.querySelector(".article")
 
 //banner
@@ -64,6 +65,7 @@ publishBtn.addEventListener("click", () => {
         db.collection("blogs").doc(docName).set({
             title: blogTitleField.value,
             subtitle: blogSubTitleField.value,
+            tags: tagsField.value.split(" "),
             article: articleField.value,
             bannerImage: bannerPath,
             publishedAt: `${date.getDate()}/${date.getMonth()}/${date.getFullYear()}`
