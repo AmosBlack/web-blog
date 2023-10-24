@@ -21,12 +21,11 @@ const setupBlog = (data) => {
     let rawTags = data.tags;
     for(var i = 0; i < rawTags.length; i++){
         rawTags[i] = `<a href="/tags/${rawTags[i]}" class="blog-tag">#${rawTags[i]}</a>`
-    }
-    tagsContainer.innerHTML = rawTags.join(" ");
+    }               
     banner.style.backgroundImage = `url(${data.bannerImage})`;
-
     titleTag.innerHTML += blogTitle.innerHTML = data.title;
     blogSubtitle.innerHTML = data.subtitle;
+    tagsContainer.innerHTML = rawTags.join(" ");    
     publish.innerHTML += data.publishedAt
 
     const article = document.querySelector('.article');
