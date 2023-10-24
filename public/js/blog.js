@@ -20,13 +20,13 @@ const setupBlog = (data) => {
     tagsContainer.classList.add("blog-tags-container");
     let rawTags = data.tags;
     for(var i = 0; i < rawTags.length; i++){
-        rawTags[i] = `<a href="/tags/${rawTags[i]}" class="blog-tag">#${rawTags[i]}</a>`
+        rawTags[i] =`<a class="blog-tag"><box-icon class="tag icon" name='purchase-tag' size="sm"></box-icon>${rawTags[i]}</a>`
     }               
     banner.style.backgroundImage = `url(${data.bannerImage})`;
     titleTag.innerHTML += blogTitle.innerHTML = data.title;
     blogSubtitle.innerHTML = data.subtitle;
     tagsContainer.innerHTML = rawTags.join(" ");    
-    publish.innerHTML += data.publishedAt
+    publish.innerHTML += `<box-icon class="calendar" name='calendar icon' color='#ffffff' ></box-icon>` + data.publishedAt;
 
     const article = document.querySelector('.article');
     addArticle(article, data.article);

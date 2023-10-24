@@ -125,6 +125,10 @@ body {
     border-radius: 1px;
     font-size: 15px;
     background-color: rgb(37, 37, 37);
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: inline-flex;
+    align-items: center;
 }
 
 
@@ -159,17 +163,21 @@ body {
 
 .blog-date{
     color: #968f8f;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    align-items: flex-end;
 }
 
 .btn.dark {
-    background: rgba(0, 0, 0, 0.5);
-    color: #fff;
+    background: rgba(196, 192, 192, 0.99);
+    color: #020202;
     max-width: fit-content;
 }
 
 .btn:hover {
     background: rgba(0, 0, 0, 0.9);
-    color: #fff;
+    color: #ffffff;
 }
 
 .logo {
@@ -178,4 +186,12 @@ body {
 
 .logo:hover {
     cursor: pointer;
+}
+
+.icon{
+    fill: white;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+
 }
