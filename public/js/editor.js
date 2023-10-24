@@ -61,6 +61,7 @@ publishBtn.addEventListener("click", () => {
         // setting up docNaame  
         let docName = `${blogTitle}-${id}`;
         let date = new Date(); // for blog metadata
+        let months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sept", "Nov", "Dec"]; // for blog metadata
         //access firestore with db 
         db.collection("blogs").doc(docName).set({
             title: blogTitleField.value,
@@ -68,7 +69,7 @@ publishBtn.addEventListener("click", () => {
             tags: tagsField.value.split(" "),
             article: articleField.value,
             bannerImage: bannerPath,
-            publishedAt: `${date.getDate()}/${date.getMonth()}/${date.getFullYear()}`
+            publishedAt: `${date.getDate()} ${months[date.getMonth()-1]} ${date.getFullYear()}`
         })
         .then(() => {
             location.href = `/${docName}`

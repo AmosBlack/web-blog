@@ -53,6 +53,7 @@ body {
     width: 100%;
     height: calc(100vh - 60px);
     background: url('https://firebasestorage.googleapis.com/v0/b/amoswebblog.appspot.com/o/jinwoo.png?alt=media&token=394c2d8b-5acc-4f4f-abb0-b0393615c7e1');
+    backdrop-filter: brightness(0.5);
     background-position: center center;
     background-size: cover;
     display: flex;
@@ -100,12 +101,21 @@ body {
     justify-content: center;
 }   
 
+.blog-link{
+    text-decoration: none;
+    color: none;
+}
+
 .blog-card {
     display: flex;
     flex-direction: column;
     width: 500px;
     padding: 5px 10px;
     margin: 10px 20px;
+}
+
+.blog-tags{
+    margin: 10px 0;
 }
 
 .blog-tag{
@@ -129,17 +139,18 @@ body {
     object-fit: cover;
     border-radius: 10px;
     margin-bottom: 10px;
+    filter: brightness(1);
     color: #fff;
-}
-
-.blog-title{
-    font-family: "Bree Serif";
 }
 
 .blog-image:hover {
     cursor: pointer;
-    transform: scale(1.01);
     overflow: hidden;
+    filter: brightness(0.8)
+}
+
+.blog-title{
+    font-family: "Bree Serif";
 }
 
 .blog-overview {
@@ -149,7 +160,6 @@ body {
 
 .blog-date{
     color: #968f8f;
-    font-style: italic;
 }
 
 .btn.dark {

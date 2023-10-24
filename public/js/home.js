@@ -13,16 +13,19 @@ const createBlog = (blog) => {
     let data = blog.data();
     let content = data.tags
     for(var i = 0; i < content.length; i++){
-        content[i] = `<a href="/tags/${content[i]}" class="blog-tag">#${content[i]}</a>`
+        content[i] = `<a class="blog-tag">#${content[i]}</a>`
+        // href="/tags/${content[i]}" add this also to the anchor tag
     }
 
     blogSection.innerHTML += ` 
         <div class="blog-card">
-            <img src="${data.bannerImage}" class="blog-image" alt="">
-            <div class="blog-tags"> ${content.join(" ")} </div>
-            <h1 class="blog-title">${data.title}</h1>
-            <p class="blog-date">${data.publishedAt}</p>
-            <p class="blog-overview">${data.subtitle}</p>
-            <a href="/${blog.id}" class="btn dark">read</a>
+            <a class="blog-link" href="/${blog.id}">
+                <img src="${data.bannerImage}" class="blog-image" alt="">
+                <h1 class="blog-title">${data.title}</h1>
+                <div class="blog-tags"> ${content.join(" ")} </div>
+                <p class="blog-date">${data.publishedAt}</p>
+                <p class="blog-overview">${data.subtitle}</p>
+                <a href="/${blog.id}" class="btn dark">read</a>
+            </a>        
         </div>`;
 }
