@@ -13,7 +13,7 @@ const createBlog = (blog) => {
     let data = blog.data();
     let content = data.tags
     for(var i = 0; i < content.length; i++){
-        content[i] = `<a class="blog-tag"><box-icon class="tag icon" name='purchase-tag' size="sm"></box-icon>${content[i]}</a>`
+        content[i] = `<a class="blog-tag"><box-icon class="tag icon" name='purchase-tag' size="xs"></box-icon>${content[i]}</a>`
         // href="/tags/${content[i]}" add this also to the anchor tag
     }
 
@@ -29,3 +29,5 @@ const createBlog = (blog) => {
             </a>        
         </div>`;
 }
+
+

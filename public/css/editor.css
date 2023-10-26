@@ -46,7 +46,6 @@ textarea::-webkit-scrollbar-thumb{
 .title,
 .article, .subtitle, .tags{
     width: 100%;
-    min-height: 100px;
     height: auto;
     outline: none;
     font-size: 50px;

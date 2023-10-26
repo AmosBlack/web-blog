@@ -14,7 +14,8 @@
     <link rel="manifest" href="/site.webmanifest">
     <script src="js/firebase.js" defer></script>
     <script src="js/home.js" defer></script>
-    <title>OjasMittal's Blog</title>
+    <script src="js/search.js" defer></script>
+    <title>OjasMittal</title>
 </head>
 
 <body>
@@ -31,19 +32,62 @@
                 <span class="small">welcome to the world of</span>
                 <span class="no-fill">Amos Black</span>
             </h1>
-            <a href="/editor" class="btn">Write a Blog</a>
+            <a href="#blogs" class="btn">Read More</a>
         </div>
     </header>
 
     <!-- blog section -->
-    <section class="blogs-section">
-        <!-- <div class="blog-card">
-            <img src="./img/jinwoo.jpg" class="blog-image" alt="">
-            <h1 class="blog-title">Lorem ipsum dolor sit amet consectetur.</h1>
-            <p class="blog-overview">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt incidunt fugiat quos porro repellat harum. Adipisci tempora corporis rem cum.</p>
-            <a href="/" class="btn dark">read</a>
-        </div> -->
-    </section>
+    <div id="blogs">
+        <section id="blogs-header"> 
+            <div class="headerh">
+                <h1 class="double"><span>Articles</span></h1>
+            </div>            
+            <div class="filter">
+                <div class="search">
+                    <box-icon name='search' class="icon"></box-icon><input type="text" id="search-bar" placeholder="Search">
+                </div>
+                <dl class="dropdown"> 
+  
+                    <dt>
+                    <a >
+                      <span class="hida" style="color:gray">Filter</span>    
+                      <p class="multiSel"></p>  
+                    </a>
+                    </dt>
+                  
+                    <dd>
+                        <div class="mutliSelect">
+                            <ul>
+                                <li>
+                                    <input type="checkbox" value="view-all" />View All</li>
+                                <li>
+                                <li>
+                                    <input type="checkbox" value="book-review" />Book Review</li>
+                                <li>
+                                    <input type="checkbox" value="short-story" />Short Story</li>
+                                <li>
+                                    <input type="checkbox" value="history" />History</li>
+                                <li>
+                                    <input type="checkbox" value="human-nature" />Human Nature</li>
+                                <li>
+                                    <input type="checkbox" value="coding" />Coding</li>
+                                <li>
+                                    <input type="checkbox" value="blog" />Blog</li>
+                            </ul>
+                        </div>
+                    </dd>
+                </dl>
+            </div>
+        </section>
+        <section class="blogs-section">
+            <!-- <div class="blog-card">
+                <img src="./img/jinwoo.jpg" class="blog-image" alt="">
+                <h1 class="blog-title">Lorem ipsum dolor sit amet consectetur.</h1>
+                <p class="blog-overview">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt incidunt fugiat quos porro repellat harum. Adipisci tempora corporis rem cum.</p>
+                <a href="/" class="btn dark">read</a>
+            </div> -->
+        </section>
+    </div>
 </body>
 
 </html>

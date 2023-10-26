@@ -1,21 +1,51 @@
 @import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Bitter&family=Bree+Serif&family=DM+Serif+Display&family=Frank+Ruhl+Libre&family=Roboto+Condensed:ital,wght@1,300&family=Rubik&family=Rubik+Mono+One&family=Ubuntu&display=swap');
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    transition: all 0.3s ease;
+    scroll-behavior: smooth;
+    transition: all 0.1s ease;
 }
+
+/* general */
 
 body {
     width: 100%;
     position: relative;
-    font-family: 'Arial', serif;
+    font-family: 'Ubuntu Mono', serif;
+    font-size: 1.2em;
+}
+
+:focus {
+    outline: none;
 }
 
 ::selection {
-    background: #968f8f;
+    background: #2c2b2b;
     color: #fff;
 }
+
+::-webkit-scrollbar{
+    background-color: #2c2b2b;
+    width: 3px;
+    border: 2px white;
+}
+
+::-webkit-scrollbar-thumb{
+    background-color: #fff;
+}
+
+
+.icon {
+    fill: grey;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 2px;
+}
+
+/* header */
 
 .navbar {
     width: 100%;
@@ -29,6 +59,14 @@ body {
     padding: 0 5vw;
     background: #0f0f0f;
     z-index: 9;
+}
+
+.logo {
+    height: 100%;
+}
+
+.logo:hover {
+    cursor: pointer;
 }
 
 .links-container {
@@ -59,6 +97,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-bottom: 0;
 }
 
 .content {
@@ -68,7 +107,6 @@ body {
 .heading {
     color: #fff;
     text-transform: capitalize;
-    font-size: 80px;
     line-height: 60px;
     margin-bottom: 80px;
     text-shadow: 0 0 5px black;
@@ -76,12 +114,14 @@ body {
 
 .heading .small {
     display: block;
-    font-size: 40px;
+    font-size: 2em;
 }
 
 .heading .no-fill {
+    margin-top: 50px;
     font-style: italic;
     color: transparent;
+    font-size: 4em;
     -webkit-text-stroke: 2px #fff;
 }
 
@@ -94,14 +134,38 @@ body {
     text-transform: capitalize;
 }
 
+.btn.dark {
+    background: rgba(12, 12, 12, 0.99);
+    color: #ffffff;
+    max-width: fit-content;
+}
+
+.btn:hover {
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+}
+
+/* blogs section */
+
+.double{
+    font-size: 3em;
+    font-family: 'Bree Serif';
+    color: #ffff;
+    text-shadow: 0 2px 4px #000;
+}
+
+.double:hover{
+    cursor: pointer;
+}
+
 .blogs-section {
     display: flex;
     flex-wrap: wrap;
     background-color: #1b1b1b;
     justify-content: center;
-}   
+    min-height: 100vh;
+}
 
-.blog-link{
+.blog-link {
     text-decoration: none;
     color: none;
 }
@@ -114,11 +178,11 @@ body {
     margin: 10px 20px;
 }
 
-.blog-tags{
+.blog-tags {
     margin: 10px 0;
 }
 
-.blog-tag{
+.blog-tag {
     text-decoration: none;
     color: #968f8f;
     padding: 3px 5px;
@@ -131,6 +195,9 @@ body {
     align-items: center;
 }
 
+.blog-tag:hover {
+    cursor: pointer;
+}
 
 .blogs-section * {
     color: white;
@@ -144,6 +211,7 @@ body {
     margin-bottom: 10px;
     filter: brightness(1);
     color: #fff;
+    /* box-shadow: 0 16px 38px -12px rgba(255, 255, 255, 0.56), 0 4px 25px 0px rgba(255, 255, 255, 0.12), 0 8px 10px -5px rgba(255, 255, 255, 0.2); */
 }
 
 .blog-image:hover {
@@ -152,7 +220,7 @@ body {
     filter: brightness(0.8)
 }
 
-.blog-title{
+.blog-title {
     font-family: "Bree Serif";
 }
 
@@ -161,7 +229,7 @@ body {
     line-height: 30px;
 }
 
-.blog-date{
+.blog-date {
     color: #968f8f;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -169,29 +237,153 @@ body {
     align-items: flex-end;
 }
 
-.btn.dark {
-    background: rgba(196, 192, 192, 0.99);
-    color: #020202;
-    max-width: fit-content;
+.blog-tag:hover .icon {
+    fill: rgb(255, 255, 255);
 }
 
-.btn:hover {
-    background: rgba(0, 0, 0, 0.9);
-    color: #ffffff;
+#blogs {
+    background-color: #1b1b1b;
 }
 
-.logo {
-    height: 100%;
+#blogs-header {
+    background-color: #1b1b1b;
+    align-items: center;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
 }
 
-.logo:hover {
-    cursor: pointer;
-}
+/* blog search */
 
-.icon{
-    fill: white;
-    display: inline-flex;
+.search {
+    display: flex;
     justify-content: center;
     align-items: center;
+    margin: 20px 10px;
+    border: 1px solid #ffffff;
+    border-radius: 2px;
+    padding: 2px 5px;
+}
 
+input[type="text"] {
+    font-size: 1em;
+    padding: 10px;
+    border: none;
+    color: white;
+    border-radius: 20px;
+    background: none;
+}
+
+input {
+    font-family: 'Ubuntu Mono', serif;
+}
+
+.search:focus-within {
+    background-color: #201f1f;
+}
+
+.search:focus-within .icon {
+    fill: white;
+}
+
+/* tag select */
+
+.filter {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: center;
+    flex-direction: row;
+}
+
+.read {
+    text-decoration: none;
+    fill: white;
+}
+
+.dropdown {
+    z-index: 100;
+    font-size: 1em;
+}
+
+a {
+    color: #fff;
+}
+
+a:hover{
+    color: #fff;
+}
+
+.dropdown dd,
+.dropdown dt {
+    margin: 0px;
+    padding: 0px;
+}
+
+.dropdown ul {
+    margin: -1px 0 0 0;
+}
+
+.dropdown dd {
+    position: relative;
+}
+
+.dropdown a,
+.dropdown a:visited {
+    text-decoration: none;
+    outline: none;
+    font-size: 12px;
+}
+
+.dropdown dt a {
+    background-color: #1b1b1b;
+    border-radius: 2px;
+    border: 1px solid #ffffff;
+    display: block;
+    padding: 10px 5px 10px 15px;
+    height: 45px;
+    line-height: 24px;
+    overflow: hidden;
+    min-width: 250px;
+    font-size: 1em;
+    width: fit-content;
+}
+
+.dropdown{
+    color: gray;
+}
+
+.dropdown:focus-within{
+    color: #fff;
+}
+
+.dropdown dt a span,
+.multiSel span {
+    cursor: pointer;
+    display: inline-block;
+    padding: 0 3px 2px 0;
+}
+
+.dropdown dd ul {
+    background-color: #1b1b1b;
+    border: 0;
+    display: none;
+    left: 0px;
+    padding: 2px 15px 2px 5px;
+    position: absolute;
+    top: 2px;
+    width: 280px;
+    list-style: none;
+    height: 100px;
+    overflow: auto;
+}
+
+.dropdown span.value {
+    display: none;
+}
+
+.dropdown dd ul li a {
+    padding: 5px;
+    display: block;
 }
