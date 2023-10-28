@@ -11,12 +11,6 @@ body{
     100%{background-position:0% 50%}
 }
 
-img{
-    background-image: linear-gradient(20deg, rgb(77, 74, 74), rgb(36, 35, 35));
-    background-size: 400% 400%;
-    animation: grayloading 1s ease infinite;
-}
-
 .blog, .article{
     position: relative;
     height: fit-content;
