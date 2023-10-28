@@ -19,7 +19,7 @@ const createBlog = (blog) => {
     blogSection.innerHTML += ` 
         <div class="blog-card">
             <a class="blog-link" href="/${blog.id}">
-                <img src="${data.bannerImage}" class="blog-image" alt="">
+                <img src="${data.bannerImage}" class="blog-image" loading="lazy">
                 <h1 class="blog-title">${data.title}</h1>
                 <div class="blog-tags"> ${content.join(" ")} </div>
                 <p class="blog-date"><box-icon class="calendar icon" name='calendar' color='grey' size="sm"></box-icon>${data.publishedAt}</p>
