@@ -5,7 +5,7 @@ db.collection("blogs").get().then((blogs)=>{
         if(blog.id != decodeURI(location.pathname.split("/").pop())){
             createBlog(blog)
         }
-    })
+    })  
 })
 
 const createBlog = (blog) => {
@@ -23,7 +23,7 @@ const createBlog = (blog) => {
                 <h1 class="blog-title">${data.title}</h1>
                 <div class="blog-tags"> ${content.join(" ")} </div>
                 <p class="blog-date"><box-icon class="calendar icon" name='calendar' color='grey' size="sm"></box-icon>${data.publishedAt}</p>
-                <p class="blog-overview">${data.subtitle}</p>
+                <p class="blog-overview">${data.subtitle.substring(0,40) + "..."}</p>
                 <a href="/${blog.id}" class="btn dark">read</a>
             </a>        
         </div>`;
