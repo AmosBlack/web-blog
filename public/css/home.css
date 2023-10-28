@@ -307,12 +307,8 @@ input {
     font-size: 1em;
 }
 
-a {
-    color: #fff;
-}
-
-a:hover{
-    color: #fff;
+#cool:hover{
+    fill: rgba(0,0,0);
 }
 
 .dropdown dd,
@@ -340,18 +336,16 @@ a:hover{
     background-color: #1b1b1b;
     border-radius: 2px;
     border: 1px solid #ffffff;
-    display: block;
-    padding: 10px 5px 10px 15px;
+    display: flex;
+    align-items: center;
+    width: 50px;
     height: 45px;
-    line-height: 24px;
+    justify-content: center;
     overflow: hidden;
-    min-width: 250px;
-    font-size: 1em;
-    width: fit-content;
 }
 
 .dropdown{
-    color: gray;
+    color: silver;
 }
 
 .dropdown:focus-within{
@@ -387,3 +381,5 @@ a:hover{
     padding: 5px;
     display: block;
 }
+
+

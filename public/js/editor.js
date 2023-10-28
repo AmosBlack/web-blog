@@ -62,11 +62,31 @@ publishBtn.addEventListener("click", () => {
         let docName = `${blogTitle}-${id}`;
         let date = new Date(); // for blog metadata
         let months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sept", "Nov", "Dec"]; // for blog metadata
+        let tagsArray = tagsField.value.split(" "); 
+        // adding tags to metadata
+
+        db.collection("metadata").doc("blogs-metadata").get().then((data) => {
+            let blogsCount = data.data().blogs;
+            blogsCount += 1;
+            let tagsInDB = data.data().tags;
+            for(let i=0; i<tagsArray.length; i++){
+                if(!tagsInDB.includes(tagsArray[i])){
+                    tagsInDB.push(tagsArray[i]);
+                }
+            }
+            db.collection("metadata").doc("blogs-metadata").set({
+                tags: tagsInDB,
+                latest: blogTitleField.value,
+                blogs: blogsCount
+            }, {merge: true});
+        })
+
+
         //access firestore with db 
         db.collection("blogs").doc(docName).set({
             title: blogTitleField.value,
             subtitle: blogSubTitleField.value,
-            tags: tagsField.value.split(" "),
+            tags: tagsArray,
             article: articleField.value,
             bannerImage: bannerPath,
             publishedAt: `${date.getDate()} ${months[date.getMonth()]} ${date.getFullYear()}`

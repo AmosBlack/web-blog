@@ -8,7 +8,6 @@ db.collection("blogs").get().then((blogs)=>{
     })
 })
 
-
 const createBlog = (blog) => {
     let data = blog.data();
     let content = data.tags
